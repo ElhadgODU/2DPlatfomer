@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 17960994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.062, y: -0.362, z: -0}
+  m_LocalPosition: {x: -0.001, y: -0.131, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,12 +491,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305854042}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: -0.35, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.01780144, y: 0, z: -0, w: 0.9998416}
+  m_LocalPosition: {x: 1.2015355, y: 0.4502051, z: -2.0218732}
+  m_LocalScale: {x: 0.19193856, y: 0.20049669, z: 0.20049669}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1631658337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368523693
 GameObject:
@@ -959,7 +959,6 @@ GameObject:
   - component: {fileID: 571226186}
   - component: {fileID: 571226185}
   - component: {fileID: 571226184}
-  - component: {fileID: 571226183}
   m_Layer: 6
   m_Name: metal platform (1)
   m_TagString: Ground
@@ -967,33 +966,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &571226183
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571226182}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &571226184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1584,7 +1556,6 @@ GameObject:
   - component: {fileID: 858926503}
   - component: {fileID: 858926502}
   - component: {fileID: 858926505}
-  - component: {fileID: 858926504}
   m_Layer: 6
   m_Name: metal platform
   m_TagString: Ground
@@ -1659,33 +1630,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 618935732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &858926504
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858926501}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &858926505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3188,13 +3132,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631658334}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01780144, y: 0, z: 0, w: 0.9998416}
-  m_LocalPosition: {x: -11.71, y: -2.633, z: -0.002}
+  m_LocalRotation: {x: 0.01780144, y: -0, z: -0, w: 0.9998416}
+  m_LocalPosition: {x: -11.71, y: -2.633, z: -0.001999855}
   m_LocalScale: {x: 5.21, y: 4.9876137, z: 4.9876137}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 17960995}
   - {fileID: 960324585}
+  - {fileID: 305854045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 2.04, y: 0, z: 0}
 --- !u!114 &1631658338
@@ -3211,7 +3156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 18
-  bulletPrefab: {fileID: 9065091281477914248, guid: 6613c983fc19ced49878109a53757afd, type: 3}
+  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 960324585}
   groundCheck: {fileID: 17960995}
   groundLayer:
@@ -4688,14 +4633,13 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 305854045}
   - {fileID: 2068973751}
   - {fileID: 618935732}
   - {fileID: 2119895175}
   - {fileID: 832708786}
-  - {fileID: 1631658337}
   - {fileID: 1982955451}
   - {fileID: 2053967662}
+  - {fileID: 1631658337}
   - {fileID: 1210161732}
   - {fileID: 5577464745223520975}
   - {fileID: 6558874365836478664}
