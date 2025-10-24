@@ -94,6 +94,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
+        isGameActive = false;
+        PauseGame();
         EventManager.TriggerEvent("OnPlayerDied");
     }
 
@@ -147,4 +149,30 @@ public class GameManager : MonoBehaviour
     public float GetTimeRemaining() => timeRemaining;
     public bool IsGameActive() => isGameActive;
     public bool IsPaused() => isPaused;
+    public void RespawnPlayer()
+    {
+        Debug.Log("🔄 Respawning player...");
+
+        // Find the player
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            // Move player back to the spawn point
+            player.transform.position = spawnPoint;
+
+            // Reset player velocity
+            if (player.rb != null)
+                player.rb.velocity = Vector2.zero;
+
+            // Optionally reset the player's state to idle
+            player.ChangeState(new IdleState());
+
+            Debug.Log("✅ Player respawned at spawn point.");
+        }
+        else
+        {
+            Debug.LogWarning("⚠️ No PlayerController found in scene!");
+        }
+    }
+
 }

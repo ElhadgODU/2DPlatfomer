@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class PlayerFellDown : MonoBehaviour
+public class DeathDrop : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.GameOver();
+            GameManager.Instance.PlayerDied();
         }
     }
 }

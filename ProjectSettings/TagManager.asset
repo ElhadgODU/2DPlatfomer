@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Goal
   - Bullet
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - 
+  - Death
   - 
   - 
   - 
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Death
+    uniqueID: 4174924701
     locked: 0

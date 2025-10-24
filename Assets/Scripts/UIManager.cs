@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text coinText;
     public GameObject gameOverPanel;
     public GameObject victoryPanel;
+    public GameObject DeathPanel;
 
     private int coinCount = 0;
 
@@ -21,11 +22,12 @@ public class UIManager : MonoBehaviour
         // Subscribe to events (OBSERVER PATTERN)
         EventManager.Subscribe("OnScoreChanged", UpdateScore);
         EventManager.Subscribe("OnPlayerStateChanged", UpdateStateDisplay);
-        EventManager.Subscribe("OnGameOver", ShowGameOver); // GAME OVER
-        EventManager.Subscribe("OnLevelComplete", ShowVictory); // VICTORY
+        EventManager.Subscribe("OnGameOver", ShowGameOver);      // GAME OVER
+        EventManager.Subscribe("OnLevelComplete", ShowVictory);  // VICTORY
         EventManager.Subscribe("OnCoinCollected", UpdateCoinCount);
+        EventManager.Subscribe("OnPlayerDeath", ShowDeath); // DEATH EVENT
 
-        // Initialize
+        // Initialize panels
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -36,6 +38,12 @@ public class UIManager : MonoBehaviour
         {
             victoryPanel.SetActive(false);
             Debug.Log("Victory Panel disabled");
+        }
+
+        if (DeathPanel != null)
+        {
+            DeathPanel.SetActive(false);
+            Debug.Log("Death Panel disabled");
         }
 
         if (coinText != null)
@@ -64,6 +72,7 @@ public class UIManager : MonoBehaviour
         EventManager.Unsubscribe("OnGameOver", ShowGameOver);
         EventManager.Unsubscribe("OnLevelComplete", ShowVictory);
         EventManager.Unsubscribe("OnCoinCollected", UpdateCoinCount);
+        EventManager.Unsubscribe("OnPlayerDeath", ShowDeath);
     }
 
     void UpdateScore(object scoreData)
@@ -95,11 +104,9 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("🔴 SHOWING GAME OVER PANEL");
 
-        // Make sure victory panel is hidden
-        if (victoryPanel != null)
-        {
-            victoryPanel.SetActive(false);
-        }
+        // Hide other panels
+        if (victoryPanel != null) victoryPanel.SetActive(false);
+        if (DeathPanel != null) DeathPanel.SetActive(false);
 
         // Show game over panel
         if (gameOverPanel != null)
@@ -117,11 +124,9 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("🟢 SHOWING VICTORY PANEL");
 
-        // Make sure game over panel is hidden
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(false);
-        }
+        // Hide other panels
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (DeathPanel != null) DeathPanel.SetActive(false);
 
         // Show victory panel
         if (victoryPanel != null)
@@ -135,6 +140,27 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    void ShowDeath(object data)
+    {
+        Debug.Log("💀 SHOWING DEATH PANEL");
+
+        // Hide other panels
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (victoryPanel != null) victoryPanel.SetActive(false);
+
+        // Show death panel
+        if (DeathPanel != null)
+        {
+            DeathPanel.SetActive(true);
+            Debug.Log("Death Panel activated");
+        }
+        else
+        {
+            Debug.LogError("❌ Death Panel is NULL!");
+
+        }
+    }
+
     public void OnRestartButton()
     {
         if (GameManager.Instance != null)
@@ -143,6 +169,16 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.RestartGame();
         }
     }
+
+    public void OnRespawnButton()
+{
+    if (GameManager.Instance != null)
+    {
+        Debug.Log("🔁 Respawn button pressed.");
+        DeathPanel.SetActive(false);
+        GameManager.Instance.RespawnPlayer(); // Make sure your GameManager has this method
+    }
+}
 
     public int GetCoinCount()
     {
