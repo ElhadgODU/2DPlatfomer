@@ -103,7 +103,7 @@ MonoBehaviour:
   rotates: 1
   rotationSpeed: 100
   collectEffect: {fileID: 0}
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 4ff440c9d59b6634d8f3cf939ae7ef83, type: 3}
 --- !u!61 &7932792943824896544
 BoxCollider2D:
   m_ObjectHideFlags: 0
