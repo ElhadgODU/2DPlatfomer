@@ -7,6 +7,7 @@ public class DeathDrop : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.Instance.PlayerDied();
+            GameManager.Instance.GameOver();
         }
     }
 }
