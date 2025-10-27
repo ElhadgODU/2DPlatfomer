@@ -36,7 +36,9 @@ public class Collectible : MonoBehaviour
         }
 
         if (collision.CompareTag("Player"))
+
         {
+            AudioManager.Instance.PlayCoinSound();
             Collect();
         }
     }
