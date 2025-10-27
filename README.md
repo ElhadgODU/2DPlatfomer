@@ -28,7 +28,7 @@
 3. Game Flow: GameState: Time limit and One Scene
 
 ## Repository Statistics
-- Total Commits: 19
+- Total Commits: 23
 - Task 3 Commits: 19
 - Lines of Code: Game Manager: 178
 - Development Time: 7 hours
