@@ -20,7 +20,7 @@
 ## State Machine Pattern
 - Player States: Idle, Run, Jump
 - Game States: Enhanced from Task 2
-- State transitions: Idle to move: D and A, Run to jump: Space
+- State transitions: Idle to move: D and A, Run to jump: Space Fire: F
 
 ### Key Integration Points
 1. Score System: Singleton → Observer → UI
