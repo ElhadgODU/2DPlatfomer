@@ -25,7 +25,7 @@
 ### Key Integration Points
 1. Score System: Singleton → Observer → UI
 2. Player Actions: Input → State → Event → Audio
-3. Game Flow: GameState → Events → Scene Changes
+3. Game Flow: GameState: Time limit and One Scene
 
 ## Repository Statistics
 - Total Commits: 17
@@ -35,5 +35,5 @@
 
 ## How to Play
 - Controls: WASD and Space, and F 
-- Objective: Go through an obstacle course to reach the goal before the timer ends. You have to go through the whole thing in one go.
+- Objective: Go through an obstacle course to reach the goal before the timer ends. You have to go through the whole thing in one go without Dying
 - New Features: New level design, rougle-like
